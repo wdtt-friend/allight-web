@@ -19,16 +19,14 @@ export const appGlobalStyles = css`
             sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #f8f9fa;
-        color: #212529;
     }
 
     #root {
-        max-width: 480px; /* 모바일 최대 너비 */
+        width: 100%;
+        max-width: 480px;
         margin: 0 auto;
         min-height: 100vh;
-        background-color: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
     }
 
     a {
