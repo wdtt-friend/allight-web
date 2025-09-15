@@ -1,9 +1,9 @@
 function App() {
-  return (
-    <>
-      <div>Allight</div>
-    </>
-  )
+    return (
+        <>
+            <div>Allight</div>
+        </>
+    );
 }
 
-export default App
+export default App;
