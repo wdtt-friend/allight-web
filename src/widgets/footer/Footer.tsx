@@ -14,7 +14,7 @@ const contentStyles = css`
 const linksStyles = css`
     display: flex;
     justify-content: center;
-    gap: .75rem;
+    gap: 0.75rem;
 `;
 
 const linkStyles = css`

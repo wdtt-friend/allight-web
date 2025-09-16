@@ -4,4 +4,4 @@ export const ROUTES = {
     CREW: '/crew',
     MESSAGE: '/message',
     PROFILE: '/me/profile',
-}
+};

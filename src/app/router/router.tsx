@@ -1,25 +1,21 @@
-// src/app/router/router.tsx
 import { createBrowserRouter } from 'react-router-dom';
-import { Header } from '../../widgets/header/Header';
-import { Main } from '../../widgets/main/Main';
-import { Footer } from '../../widgets/footer/Footer';
+import { ROUTES } from './routes';
+import { RootLayout } from '../../widgets/root/RootLayout';
+import { RouteErrorFallback } from '../../shared/ui/error/RouteErrorFallback';
+import { RouterLoader } from '../../shared/ui/loader/RouterLoader';
 import { HomePage } from '../../pages/home/HomePage';
 import { SearchPage } from '../../pages/search/SearchPage';
 import { CrewPage } from '../../pages/crew/CrewPage';
 import { MessagePage } from '../../pages/message/MessagePage';
 import { ProfilePage } from '../../pages/profile/ProfilePage';
-import { ROUTES } from './routes';
 
 export const router = createBrowserRouter([
     {
-        path: '/',
-        element: (
-            <>
-                <Header />
-                <Main />
-                <Footer />
-            </>
-        ),
+        element: <RootLayout />,
+        // Router 레벨 에러 UI(인증)
+        errorElement: <RouteErrorFallback />,
+        // Router 레벨 로딩 UI(인증)
+        hydrateFallbackElement: <RouterLoader />,
         children: [
             {
                 path: ROUTES.HOME,

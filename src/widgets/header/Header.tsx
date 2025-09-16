@@ -20,7 +20,7 @@ const logoStyles = css`
 const actionItemsStyles = css`
     display: flex;
     align-items: center;
-    gap: .75rem;
+    gap: 0.75rem;
 `;
 
 const actionItemStyles = css`
@@ -39,18 +39,22 @@ export const Header = () => {
     return (
         <header css={headerStyles}>
             <div css={logoStyles}>
-                <Link 
-                    to={ROUTES.HOME} 
+                <Link
+                    to={ROUTES.HOME}
                     aria-label="Allight 홈페이지로 이동"
                     title="Allight 홈페이지로 이동"
                 >
                     ALLIGHT
                 </Link>
             </div>
-            
+
             <div css={actionItemsStyles}>
-                <div onClick={handleSearchClick} css={actionItemStyles}>검색</div>
-                <div onClick={handleNotificationClick} css={actionItemStyles}>알림</div>
+                <div onClick={handleSearchClick} css={actionItemStyles}>
+                    검색
+                </div>
+                <div onClick={handleNotificationClick} css={actionItemStyles}>
+                    알림
+                </div>
             </div>
         </header>
     );

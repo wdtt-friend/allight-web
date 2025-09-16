@@ -1,0 +1,29 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+// QueryProvider 기본 설정(개별 쿼리는 오버라이드 방식)
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            staleTime: 0, // 기본값: 즉시 stale
+            gcTime: 5 * 60 * 1000, // 기본값: 5분
+            retry: 3, // 기본값: 3회
+        },
+        mutations: {
+            retry: 0, // 기본값: 0회
+        }
+    },
+});
+
+interface QueryProviderProps {
+    children: React.ReactNode;
+}
+
+export const QueryProvider = ({ children }: QueryProviderProps) => {
+    return (
+        <QueryClientProvider client={queryClient}>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+    );
+};
