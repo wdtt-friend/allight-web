@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 // QueryProvider 기본 설정(개별 쿼리는 오버라이드 방식)
 const queryClient = new QueryClient({
@@ -23,7 +22,6 @@ export const QueryProvider = ({ children }: QueryProviderProps) => {
     return (
         <QueryClientProvider client={queryClient}>
             {children}
-            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </QueryClientProvider>
     );
 };
