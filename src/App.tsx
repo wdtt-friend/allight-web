@@ -1,6 +1,6 @@
 import { GlobalStyles } from './app/styles/global';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './app/router/Router';
+import { router } from './app/router/router';
 import { ErrorBoundary } from 'react-error-boundary';
 import { AppErrorFallback } from './shared/ui/error/AppErrorFallback';
 import { QueryProvider } from './app/providers/QueryProvider';
