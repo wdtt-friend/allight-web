@@ -11,7 +11,7 @@ const queryClient = new QueryClient({
         },
         mutations: {
             retry: 0, // 기본값: 0회
-        }
+        },
     },
 });
 

@@ -5,9 +5,7 @@ export const HomeItemListSkeleton = () => {
         //         <HomeItemSkeleton key={i} />
         //     ))}
         // </div>
-        <div>
-            HomeItemList 요청중...
-        </div>
+        <div>HomeItemList 요청중...</div>
     );
 };
 

@@ -14,11 +14,11 @@ export const HomePage = () => (
         </Suspense>
     </ErrorBoundary>
 );
-  
+
 function HomeListSection() {
     const { data } = useSuspenseQuery<HomeItemListDTO>({
         queryKey: ['homeItemList'],
-        queryFn: getHomeItemList,
+        queryFn: ({ signal }) => getHomeItemList({ signal }),
     });
 
     return <HomeItemList homeItemList={data.homeItemList} />;
