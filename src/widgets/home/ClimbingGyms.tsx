@@ -1,4 +1,4 @@
-import type { ClimbingGymDTO } from '../../shared/api/types/home';
+import type { ClimbingGymDTO } from '../../shared/api/types/climbing-gyms';
 
 export function ClimbingGyms({
     climbingGyms,
