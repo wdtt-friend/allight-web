@@ -55,7 +55,7 @@ const HomeButton = styled.button`
     }
 `;
 
-export const ErrorFallback = () => {
+export const PageErrorFallback = () => {
     const navigate = useNavigate();
 
     return (
@@ -72,6 +72,14 @@ export const ErrorFallback = () => {
                     홈으로 이동
                 </HomeButton>
             </div>
+        </div>
+    );
+};
+
+export const FetchErrorFallback = ({ message }: { message: string }) => {
+    return (
+        <div>
+            <p>{message}</p>
         </div>
     );
 };

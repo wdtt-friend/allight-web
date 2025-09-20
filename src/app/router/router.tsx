@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ROUTES } from './routes';
 import { RootLayout } from '../../widgets/root/RootLayout';
-import { ErrorFallback } from '../../shared/ui/error/ErrorFallback';
+import { PageErrorFallback } from '../../shared/ui/error/ErrorFallback';
 import { RouterLoader } from '../../shared/ui/loader/RouterLoader';
 import { HomePage } from '../../pages/home/HomePage';
 import { SearchPage } from '../../pages/search/SearchPage';
@@ -12,7 +12,7 @@ import { ProfilePage } from '../../pages/profile/ProfilePage';
 export const router = createBrowserRouter([
     {
         element: <RootLayout />,
-        errorElement: <ErrorFallback />,
+        errorElement: <PageErrorFallback />,
         hydrateFallbackElement: <RouterLoader />,
         children: [
             {

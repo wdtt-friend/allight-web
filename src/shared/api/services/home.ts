@@ -1,29 +1,33 @@
-import type { HomeItemDTO, HomeItemListDTO } from '../types/home';
+import type { ClimbingGymsDTO } from '../types/home';
 
-export async function getHomeItemList(opts?: {
-    signal?: AbortSignal;
-}): Promise<HomeItemListDTO> {
-    const sleep = (ms: number, signal?: AbortSignal) =>
-        new Promise<void>((resolve, reject) => {
-            if (signal?.aborted) {
-                return reject(new DOMException('Aborted', 'AbortError'));
-            }
+export async function getClimbingGyms(
+    page: number = 1,
+    size: number = 10,
+    signal?: AbortSignal
+): Promise<ClimbingGymsDTO> {
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
+    
+    if (!baseUrl) {
+        throw new Error('baseUrl이 설정되지 않았습니다.');
+    }
 
-            const timer = setTimeout(resolve, ms);
+    const params = new URLSearchParams({
+        page: page.toString(),
+        size: size.toString(),
+    });
 
-            signal?.addEventListener(
-                'abort',
-                () => {
-                    clearTimeout(timer);
-                    reject(new DOMException('Aborted', 'AbortError'));
-                },
-                { once: true }
-            );
-        });
+    const response = await fetch(`${baseUrl}/climbing-gyms?${params}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        signal,
+    });
 
-    await sleep(300, opts?.signal);
+    if (!response.ok) {
+        throw new Error(`HTTP 오류가 발생하였습니다. 상태 코드: ${response.status}`);
+    }
 
-    const homeItemList: HomeItemDTO[] = [{ id: 0 }, { id: 1 }, { id: 2 }];
-
-    return { homeItemList };
+    return response.json();
 }
