@@ -6,7 +6,7 @@ const queryClient = new QueryClient({
         queries: {
             staleTime: 0, // 기본값: 즉시 stale
             gcTime: 5 * 60 * 1000, // 기본값: 5분
-            retry: 3, // 기본값: 3회
+            retry: 0, // 기본값: 0회
         },
         mutations: {
             retry: 0, // 기본값: 0회
