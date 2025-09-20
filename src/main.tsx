@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 const pageStyles = css`
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
 `;
 
 createRoot(document.getElementById('root')!).render(

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ROUTES } from './routes';
 import { RootLayout } from '../../widgets/root/RootLayout';
-import { RouteErrorFallback } from '../../shared/ui/error/RouteErrorFallback';
+import { ErrorFallback } from '../../shared/ui/error/ErrorFallback';
 import { RouterLoader } from '../../shared/ui/loader/RouterLoader';
 import { HomePage } from '../../pages/home/HomePage';
 import { SearchPage } from '../../pages/search/SearchPage';
@@ -12,9 +12,7 @@ import { ProfilePage } from '../../pages/profile/ProfilePage';
 export const router = createBrowserRouter([
     {
         element: <RootLayout />,
-        // Router 레벨 에러 UI(인증)
-        errorElement: <RouteErrorFallback />,
-        // Router 레벨 로딩 UI(인증)
+        errorElement: <ErrorFallback />,
         hydrateFallbackElement: <RouterLoader />,
         children: [
             {
