@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
-            staleTime: 0, // 기본값: 즉시 stale
+            staleTime: 5 * 60 * 1000, // 5분간 fresh
             gcTime: 5 * 60 * 1000, // 기본값: 5분
             retry: 0, // 기본값: 0회
         },
