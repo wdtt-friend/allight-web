@@ -1,5 +1,5 @@
-import { apiClient } from '../../lib/fetch-utils';
-import type { ClimbingGymsDTO } from '../types/climbing-gyms';
+import { apiClient } from '@/shared/lib/fetch-utils';
+import type { ClimbingGymsDTO } from '@/shared/types/climbing-gyms';
 
 type GetClimbingGymsParams = {
     page?: number;
