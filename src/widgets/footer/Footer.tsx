@@ -1,29 +1,42 @@
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/shared/constants/routes';
+import { 
+    AiOutlineHome, 
+    AiOutlineSearch, 
+    AiOutlineTeam, 
+    AiOutlineComment, 
+    AiOutlineUser 
+} from 'react-icons/ai';
 
 const footerStyles = css`
     background-color: #fff;
     color: #222;
+    padding: 8px 0 32px 0px;
+    border-top: 1px solid #eee;
 `;
 
 const contentStyles = css`
-    max-width: 100%;
+    width: 100%;
 `;
 
 const linksStyles = css`
     display: flex;
-    justify-content: center;
-    gap: 0.75rem;
+    gap: 0;
 `;
 
 const linkStyles = css`
-    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #222;
 `;
 
-const copyrightStyles = css`
-    font-size: 0.75rem;
-    text-align: center;
+const iconStyles = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const Footer = () => {
@@ -32,24 +45,30 @@ export const Footer = () => {
             <div css={contentStyles}>
                 <div css={linksStyles}>
                     <Link to={ROUTES.HOME} css={linkStyles}>
-                        Home
+                        <span css={iconStyles}>
+                            <AiOutlineHome size={24} />
+                        </span>
                     </Link>
                     <Link to={ROUTES.SEARCH} css={linkStyles}>
-                        Search
+                        <span css={iconStyles}>
+                            <AiOutlineSearch size={24} />
+                        </span>
                     </Link>
                     <Link to={ROUTES.CREW} css={linkStyles}>
-                        Crew
+                        <span css={iconStyles}>
+                            <AiOutlineTeam size={24} />
+                        </span>
                     </Link>
                     <Link to={ROUTES.MESSAGE} css={linkStyles}>
-                        Message
+                        <span css={iconStyles}>
+                            <AiOutlineComment size={24} />
+                        </span>
                     </Link>
                     <Link to={ROUTES.PROFILE} css={linkStyles}>
-                        Profile
+                        <span css={iconStyles}>
+                            <AiOutlineUser size={24} />
+                        </span>
                     </Link>
-                </div>
-
-                <div css={copyrightStyles}>
-                    © 2025 wdtt-friend. All rights reserved.
                 </div>
             </div>
         </footer>

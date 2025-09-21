@@ -1,30 +1,48 @@
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/shared/constants/routes';
+import {
+    AiOutlineSearch,
+    AiOutlineBell,
+} from 'react-icons/ai';
+// import mainLogo from '@/assets/main-logo.png';
 
 const headerStyles = css`
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     z-index: 100;
+    padding: 12px 20px;
 `;
 
 const logoStyles = css`
     a {
         color: #222;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         font-weight: 600;
+        display: flex;
     }
 `;
+
+// const logoImageStyles = css`
+//     height: 32px;
+//     width: auto;
+// `;
 
 const actionItemsStyles = css`
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 `;
 
 const actionItemStyles = css`
     cursor: pointer;
+`;
+
+const iconStyles = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const Header = () => {
@@ -44,16 +62,25 @@ export const Header = () => {
                     aria-label="Allight 홈페이지로 이동"
                     title="Allight 홈페이지로 이동"
                 >
-                    ALLIGHT
+                    {/* <img 
+                        src={mainLogo} 
+                        alt="Allight Main Logo" 
+                        css={logoImageStyles}
+                    /> */}
+                    Logo
                 </Link>
             </div>
 
             <div css={actionItemsStyles}>
                 <div onClick={handleSearchClick} css={actionItemStyles}>
-                    검색
+                    <span css={iconStyles}>
+                        <AiOutlineSearch size={24} />
+                    </span>
                 </div>
                 <div onClick={handleNotificationClick} css={actionItemStyles}>
-                    알림
+                    <span css={iconStyles}>
+                        <AiOutlineBell size={24} />
+                    </span>
                 </div>
             </div>
         </header>
