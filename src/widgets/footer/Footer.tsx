@@ -22,15 +22,14 @@ const contentStyles = css`
 
 const linksStyles = css`
     display: flex;
-    gap: 0;
 `;
 
 const linkStyles = css`
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex: 1;
+    justify-content: center;
     color: #222;
+    flex: 1;
 `;
 
 const iconStyles = css`
@@ -46,27 +45,27 @@ export const Footer = () => {
                 <div css={linksStyles}>
                     <Link to={ROUTES.HOME} css={linkStyles}>
                         <span css={iconStyles}>
-                            <AiOutlineHome size={24} />
+                            <AiOutlineHome size={28} />
                         </span>
                     </Link>
                     <Link to={ROUTES.SEARCH} css={linkStyles}>
                         <span css={iconStyles}>
-                            <AiOutlineSearch size={24} />
+                            <AiOutlineSearch size={28} />
                         </span>
                     </Link>
                     <Link to={ROUTES.CREW} css={linkStyles}>
                         <span css={iconStyles}>
-                            <AiOutlineTeam size={24} />
+                            <AiOutlineTeam size={28} />
                         </span>
                     </Link>
                     <Link to={ROUTES.MESSAGE} css={linkStyles}>
                         <span css={iconStyles}>
-                            <AiOutlineComment size={24} />
+                            <AiOutlineComment size={28} />
                         </span>
                     </Link>
                     <Link to={ROUTES.PROFILE} css={linkStyles}>
                         <span css={iconStyles}>
-                            <AiOutlineUser size={24} />
+                            <AiOutlineUser size={28} />
                         </span>
                     </Link>
                 </div>
