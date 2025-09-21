@@ -12,7 +12,7 @@ import {
 const footerStyles = css`
     background-color: #fff;
     color: #222;
-    padding: 8px 0 32px 0px;
+    padding: 8px 0 32px 0;
     border-top: 1px solid #eee;
 `;
 
@@ -28,7 +28,7 @@ const linksStyles = css`
 const linkStyles = css`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex: 1;
     color: #222;
 `;
