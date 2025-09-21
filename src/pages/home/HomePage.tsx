@@ -12,20 +12,15 @@ import { ErrorBoundary } from 'react-error-boundary';
 export const HomePage = () => (
     <ErrorBoundary FallbackComponent={() => <FetchErrorFallback message={ERROR_MESSAGES.climbingGyms} />}>
         <Suspense fallback={<ClimbingGymsSkeleton />}>
-            <ClimbingGymsSection page={1} size={10} />
+            <ClimbingGymsSection />
         </Suspense>
     </ErrorBoundary>
 );
 
-type ClimbingGymsSectionProps = {
-    page?: number;
-    size?: number;
-};
-
-function ClimbingGymsSection({ page = 1, size = 10 }: ClimbingGymsSectionProps) {
+function ClimbingGymsSection() {
     const { data } = useSuspenseQuery({
-        queryKey: [QUERY_KEYS.climbingGyms, page, size],
-        queryFn: ({ signal }) => getClimbingGyms({ page, size, signal }),
+        queryKey: [QUERY_KEYS.climbingGyms],
+        queryFn: ({ signal }) => getClimbingGyms({ signal }),
     });
 
     const gyms = data.content;

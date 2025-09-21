@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { ROUTES } from './routes';
+import { ROUTES } from '@/shared/constants/routes';
 import { RootLayout } from '@/widgets/root/RootLayout';
 import { PageErrorFallback } from '@/shared/ui/error/ErrorFallback';
 import { RouterLoader } from '@/shared/ui/loader/RouterLoader';

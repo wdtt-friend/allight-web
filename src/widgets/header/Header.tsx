@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@/app/router/routes';
+import { ROUTES } from '@/shared/constants/routes';
 
 const headerStyles = css`
     display: flex;
