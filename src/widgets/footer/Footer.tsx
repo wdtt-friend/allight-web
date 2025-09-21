@@ -12,7 +12,7 @@ import {
 const footerStyles = css`
     background-color: #fff;
     color: #222;
-    padding: 8px 0 32px 0;
+    padding: 12px 0 32px 0;
     border-top: 1px solid #eee;
 `;
 

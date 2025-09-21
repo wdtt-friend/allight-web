@@ -74,12 +74,12 @@ export const Header = () => {
             <div css={actionItemsStyles}>
                 <div onClick={handleSearchClick} css={actionItemStyles}>
                     <span css={iconStyles}>
-                        <AiOutlineSearch size={24} />
+                        <AiOutlineSearch size={28} />
                     </span>
                 </div>
                 <div onClick={handleNotificationClick} css={actionItemStyles}>
                     <span css={iconStyles}>
-                        <AiOutlineBell size={24} />
+                        <AiOutlineBell size={28} />
                     </span>
                 </div>
             </div>
