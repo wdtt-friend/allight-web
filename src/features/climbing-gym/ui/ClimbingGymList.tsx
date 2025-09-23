@@ -1,11 +1,11 @@
-import type { ClimbingGymDTO } from '@/entities/climbing-gyms/model/climbing-gyms-types';
+import type { ClimbingGymDTO } from '@/entities/climbing-gym/model/types';
 import { EmptyState } from '@/shared/ui/empty/EmptyState';
-import { useClimbingGyms } from '../model/climbing-gyms-hooks';
+import { useClimbingGymList } from '../model/useClimbingGymList';
 import { EMPTY_MESSAGES } from '@/shared/constants/message';
-import { ClimbingGym } from './ClimbingGym';
+import { ClimbingGym } from './ClimbingGymItem';
 
 export function ClimbingGyms() {
-   const { data } = useClimbingGyms();
+   const { data } = useClimbingGymList();
 
     const gyms = data.content;
 
